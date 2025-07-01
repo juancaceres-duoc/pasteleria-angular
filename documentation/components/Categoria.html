@@ -120,6 +120,24 @@
 </p>
 
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Componente Categoria</p>
+<p>Muestra una galería de productos categorizados según la ruta seleccionada.
+El usuario puede visualizar las opciones disponibles por categoría y,
+si está autenticado, puede agregar productos al carrito.</p>
+<p>Funcionalidades:</p>
+<ul>
+<li>Detecta la categoría seleccionada mediante la URL.</li>
+<li>Muestra productos de la categoría correspondiente.</li>
+<li>Permite agregar productos al carrito si el usuario ha iniciado sesión.</li>
+</ul>
+<p>Este componente se utiliza en la navegación principal del sitio cuando se accede a:
+/categoria/:nombre (por ejemplo: /categoria/tortas)</p>
+
+    </p>
 
 
     <p class="comment">
@@ -245,7 +263,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="116" class="link-to-prism">src/app/categoria/categoria.ts:116</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="146" class="link-to-prism">src/app/categoria/categoria.ts:146</a></div>
                             </td>
                         </tr>
 
@@ -336,14 +354,17 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="130"
-                                    class="link-to-prism">src/app/categoria/categoria.ts:130</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="170"
+                                    class="link-to-prism">src/app/categoria/categoria.ts:170</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Agrega un producto al carrito del usuario autenticado.
+Muestra una alerta si el usuario no ha iniciado sesión.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -354,6 +375,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -368,6 +390,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>Objeto del producto a agregar.</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -403,14 +429,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="122"
-                                    class="link-to-prism">src/app/categoria/categoria.ts:122</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="157"
+                                    class="link-to-prism">src/app/categoria/categoria.ts:157</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Carga la categoría seleccionada desde la URL y obtiene los datos del usuario autenticado.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -450,7 +478,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/categoria/categoria.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/categoria/categoria.ts:30</a></div>
                         </td>
                     </tr>
 
@@ -481,109 +509,127 @@
     {
       nombre: &#x27;Tortas y Pasteles&#x27;,
       ruta: &#x27;tortas&#x27;,
-      items: [{
-        nombre: &#x27;Torta de Biscocho Frutilla&#x27;,
-        descripcion: &#x27;Deliciosa torta de biscocho con crema de frutilla y decorada con fresas frescas.&#x27;,
-        precio: 18000,
-        imagen: &#x27;categorias/tortas/torta_biscocho_frutilla.jpg&#x27;,
-        datanombre: &#x27;Torta Biscocho Frutilla&#x27;
-      },
-      {
-        nombre: &#x27;Torta Selva Negra&#x27;,
-        descripcion: &#x27;Clásica torta de chocolate, crema y guindas, con virutas de chocolate amargo.&#x27;,
-        precio: 22000,
-        imagen: &#x27;categorias/tortas/torta_selva_negra.jpg&#x27;,
-        datanombre: &#x27;Torta Selva Negra&#x27;
-      },
-      {
-        nombre: &#x27;Torta Biscocho Frambuesa&#x27;,
-        descripcion: &#x27;Capas suaves de bizcocho rellenas con crema de vainilla y frambuesas naturales.&#x27;,
-        precio: 19000,
-        imagen: &#x27;categorias/tortas/torta_biscocho_frambuesa.jpg&#x27;,
-        datanombre: &#x27;Torta Biscocho Frambuesa&#x27;
-      }
-
-
+      items: [
+        {
+          nombre: &#x27;Torta de Biscocho Frutilla&#x27;,
+          descripcion: &#x27;Deliciosa torta de biscocho con crema de frutilla y decorada con fresas frescas.&#x27;,
+          precio: 18000,
+          imagen: &#x27;categorias/tortas/torta_biscocho_frutilla.jpg&#x27;,
+          datanombre: &#x27;Torta Biscocho Frutilla&#x27;
+        },
+        {
+          nombre: &#x27;Torta Selva Negra&#x27;,
+          descripcion: &#x27;Clásica torta de chocolate, crema y guindas, con virutas de chocolate amargo.&#x27;,
+          precio: 22000,
+          imagen: &#x27;categorias/tortas/torta_selva_negra.jpg&#x27;,
+          datanombre: &#x27;Torta Selva Negra&#x27;
+        },
+        {
+          nombre: &#x27;Torta Biscocho Frambuesa&#x27;,
+          descripcion: &#x27;Capas suaves de bizcocho rellenas con crema de vainilla y frambuesas naturales.&#x27;,
+          precio: 19000,
+          imagen: &#x27;categorias/tortas/torta_biscocho_frambuesa.jpg&#x27;,
+          datanombre: &#x27;Torta Biscocho Frambuesa&#x27;
+        }
       ]
     },
     {
-      nombre: &#x27;Tartas y Cheesecakes&#x27;, ruta: &#x27;tartas&#x27;, items: [{
-        nombre: &#x27;Cheesecake de Frambuesa&#x27;,
-        descripcion: &#x27;Base crocante, relleno suave y cobertura de frambuesas naturales.&#x27;,
-        precio: 19000,
-        imagen: &#x27;categorias/tartas/Cheesecake_de_Frambuesa.jpg&#x27;,
-        datanombre: &#x27;Cheesecake de Frambuesa&#x27;
-      },
-      {
-        nombre: &#x27;Cheesecake de Maracuyá&#x27;,
-        descripcion: &#x27;Cheesecake cremoso con un topping ácido y vibrante de maracuyá.&#x27;,
-        precio: 20000,
-        imagen: &#x27;categorias/tartas/Cheesecake_de_Maracuya.jpg&#x27;,
-        datanombre: &#x27;Cheesecake de Maracuya&#x27;
-      },
-      {
-        nombre: &#x27;Kuchen de Merengue Frambuesa&#x27;,
-        descripcion: &#x27;Clásico alemán con masa suave, frambuesa y merengue dorado.&#x27;,
-        precio: 18500,
-        imagen: &#x27;categorias/tartas/Kuchen_de_Merengue_Frambuesa.jpg&#x27;,
-        datanombre: &#x27;Kuchen de Merengue Frambuesa&#x27;
-      }]
+      nombre: &#x27;Tartas y Cheesecakes&#x27;,
+      ruta: &#x27;tartas&#x27;,
+      items: [
+        {
+          nombre: &#x27;Cheesecake de Frambuesa&#x27;,
+          descripcion: &#x27;Base crocante, relleno suave y cobertura de frambuesas naturales.&#x27;,
+          precio: 19000,
+          imagen: &#x27;categorias/tartas/Cheesecake_de_Frambuesa.jpg&#x27;,
+          datanombre: &#x27;Cheesecake de Frambuesa&#x27;
+        },
+        {
+          nombre: &#x27;Cheesecake de Maracuyá&#x27;,
+          descripcion: &#x27;Cheesecake cremoso con un topping ácido y vibrante de maracuyá.&#x27;,
+          precio: 20000,
+          imagen: &#x27;categorias/tartas/Cheesecake_de_Maracuya.jpg&#x27;,
+          datanombre: &#x27;Cheesecake de Maracuya&#x27;
+        },
+        {
+          nombre: &#x27;Kuchen de Merengue Frambuesa&#x27;,
+          descripcion: &#x27;Clásico alemán con masa suave, frambuesa y merengue dorado.&#x27;,
+          precio: 18500,
+          imagen: &#x27;categorias/tartas/Kuchen_de_Merengue_Frambuesa.jpg&#x27;,
+          datanombre: &#x27;Kuchen de Merengue Frambuesa&#x27;
+        }
+      ]
     },
     {
-      nombre: &#x27;Galletas y Masas&#x27;, ruta: &#x27;galletas&#x27;, items: [{
-        nombre: &#x27;Berlín Grande&#x27;,
-        descripcion: &#x27;Clásico relleno con mermelada, suave y esponjoso, ideal para un antojo dulce.&#x27;,
-        precio: 2500,
-        imagen: &#x27;categorias/galletas/Berlin_Grande_Mermelada.jpg&#x27;,
-        datanombre: &#x27;Berlín Grande&#x27;
-      },
-      {
-        nombre: &#x27;Galletas Surtidas&#x27;,
-        descripcion: &#x27;Selección artesanal de galletas de mantequilla, chocolate y frutas.&#x27;,
-        precio: 5000,
-        imagen: &#x27;categorias/galletas/Galletas_Surtidas.jpg&#x27;,
-        datanombre: &#x27;Galletas Surtidas&#x27;
-      },
-      {
-        nombre: &#x27;Palmeritas&#x27;,
-        descripcion: &#x27;Hojaldre crocante caramelizado, ligero y perfecto para acompañar el café.&#x27;,
-        precio: 3000,
-        imagen: &#x27;categorias/galletas/Palmera.jpg&#x27;,
-        datanombre: &#x27;Palmeritas&#x27;
-      }]
+      nombre: &#x27;Galletas y Masas&#x27;,
+      ruta: &#x27;galletas&#x27;,
+      items: [
+        {
+          nombre: &#x27;Berlín Grande&#x27;,
+          descripcion: &#x27;Clásico relleno con mermelada, suave y esponjoso, ideal para un antojo dulce.&#x27;,
+          precio: 2500,
+          imagen: &#x27;categorias/galletas/Berlin_Grande_Mermelada.jpg&#x27;,
+          datanombre: &#x27;Berlín Grande&#x27;
+        },
+        {
+          nombre: &#x27;Galletas Surtidas&#x27;,
+          descripcion: &#x27;Selección artesanal de galletas de mantequilla, chocolate y frutas.&#x27;,
+          precio: 5000,
+          imagen: &#x27;categorias/galletas/Galletas_Surtidas.jpg&#x27;,
+          datanombre: &#x27;Galletas Surtidas&#x27;
+        },
+        {
+          nombre: &#x27;Palmeritas&#x27;,
+          descripcion: &#x27;Hojaldre crocante caramelizado, ligero y perfecto para acompañar el café.&#x27;,
+          precio: 3000,
+          imagen: &#x27;categorias/galletas/Palmera.jpg&#x27;,
+          datanombre: &#x27;Palmeritas&#x27;
+        }
+      ]
     },
     {
-      nombre: &#x27;Chocolate y Bombones&#x27;, ruta: &#x27;chocolates&#x27;, items: [{
-        nombre: &#x27;Bombones Surtidos&#x27;,
-        descripcion: &#x27;Variedad artesanal de bombones con rellenos de frutas, licores y cremas suaves.&#x27;,
-        precio: 8500,
-        imagen: &#x27;categorias/chocolates/Bombones_surtidos.jpg&#x27;,
-        datanombre: &#x27;Bombones Surtidos&#x27;
-      },
-      {
-        nombre: &#x27;Fina Caja de Bombones&#x27;,
-        descripcion: &#x27;Presentación elegante con selección premium de bombones belgas.&#x27;,
-        precio: 23000,
-        imagen: &#x27;categorias/chocolates/Fina_Caja_de_Bombones.jpg&#x27;,
-        datanombre: &#x27;Fina Caja de Bombones&#x27;
-      },
-      {
-        nombre: &#x27;Caja de Pralinen&#x27;,
-        descripcion: &#x27;Pralinés de alta calidad con cobertura de chocolate y corazón cremoso.&#x27;,
-        precio: 15000,
-        imagen: &#x27;categorias/chocolates/Caja_de_Pralinen.jpg&#x27;,
-        datanombre: &#x27;Caja de Pralinen&#x27;
-      }]
+      nombre: &#x27;Chocolate y Bombones&#x27;,
+      ruta: &#x27;chocolates&#x27;,
+      items: [
+        {
+          nombre: &#x27;Bombones Surtidos&#x27;,
+          descripcion: &#x27;Variedad artesanal de bombones con rellenos de frutas, licores y cremas suaves.&#x27;,
+          precio: 8500,
+          imagen: &#x27;categorias/chocolates/Bombones_surtidos.jpg&#x27;,
+          datanombre: &#x27;Bombones Surtidos&#x27;
+        },
+        {
+          nombre: &#x27;Fina Caja de Bombones&#x27;,
+          descripcion: &#x27;Presentación elegante con selección premium de bombones belgas.&#x27;,
+          precio: 23000,
+          imagen: &#x27;categorias/chocolates/Fina_Caja_de_Bombones.jpg&#x27;,
+          datanombre: &#x27;Fina Caja de Bombones&#x27;
+        },
+        {
+          nombre: &#x27;Caja de Pralinen&#x27;,
+          descripcion: &#x27;Pralinés de alta calidad con cobertura de chocolate y corazón cremoso.&#x27;,
+          precio: 15000,
+          imagen: &#x27;categorias/chocolates/Caja_de_Pralinen.jpg&#x27;,
+          datanombre: &#x27;Caja de Pralinen&#x27;
+        }
+      ]
     }
   ]</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/categoria/categoria.ts:18</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/categoria/categoria.ts:37</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Base de datos local con los productos clasificados por categoría.
+Se accede en tiempo de ejecución para simular una carga desde backend.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -611,7 +657,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/categoria/categoria.ts:16</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/categoria/categoria.ts:31</a></div>
                         </td>
                     </tr>
 
@@ -630,129 +676,169 @@ import { CommonModule } from &#x27;@angular/common&#x27;;
 import { CarritoService, Producto } from &#x27;../services/carrito-service&#x27;;
 import { AuthService } from &#x27;../services/auth-service&#x27;;
 
+/**
+ * Componente Categoria
+ * 
+ * Muestra una galería de productos categorizados según la ruta seleccionada.
+ * El usuario puede visualizar las opciones disponibles por categoría y,
+ * si está autenticado, puede agregar productos al carrito.
+ * 
+ * Funcionalidades:
+ * - Detecta la categoría seleccionada mediante la URL.
+ * - Muestra productos de la categoría correspondiente.
+ * - Permite agregar productos al carrito si el usuario ha iniciado sesión.
+ * 
+ * Este componente se utiliza en la navegación principal del sitio cuando se accede a:
+ * /categoria/:nombre (por ejemplo: /categoria/tortas)
+ */
+
 @Component({
   selector: &#x27;app-categoria&#x27;,
   imports: [CommonModule],
   templateUrl: &#x27;./categoria.html&#x27;,
   styleUrl: &#x27;./categoria.css&#x27;
 })
-
 export class Categoria implements OnInit {
   categoriaSeleccionada: any &#x3D; null;
   usuario: any &#x3D; null;
 
+  /**
+   * Base de datos local con los productos clasificados por categoría.
+   * Se accede en tiempo de ejecución para simular una carga desde backend.
+   */
   private datos &#x3D; [
     {
       nombre: &#x27;Tortas y Pasteles&#x27;,
       ruta: &#x27;tortas&#x27;,
-      items: [{
-        nombre: &#x27;Torta de Biscocho Frutilla&#x27;,
-        descripcion: &#x27;Deliciosa torta de biscocho con crema de frutilla y decorada con fresas frescas.&#x27;,
-        precio: 18000,
-        imagen: &#x27;categorias/tortas/torta_biscocho_frutilla.jpg&#x27;,
-        datanombre: &#x27;Torta Biscocho Frutilla&#x27;
-      },
-      {
-        nombre: &#x27;Torta Selva Negra&#x27;,
-        descripcion: &#x27;Clásica torta de chocolate, crema y guindas, con virutas de chocolate amargo.&#x27;,
-        precio: 22000,
-        imagen: &#x27;categorias/tortas/torta_selva_negra.jpg&#x27;,
-        datanombre: &#x27;Torta Selva Negra&#x27;
-      },
-      {
-        nombre: &#x27;Torta Biscocho Frambuesa&#x27;,
-        descripcion: &#x27;Capas suaves de bizcocho rellenas con crema de vainilla y frambuesas naturales.&#x27;,
-        precio: 19000,
-        imagen: &#x27;categorias/tortas/torta_biscocho_frambuesa.jpg&#x27;,
-        datanombre: &#x27;Torta Biscocho Frambuesa&#x27;
-      }
-
-
+      items: [
+        {
+          nombre: &#x27;Torta de Biscocho Frutilla&#x27;,
+          descripcion: &#x27;Deliciosa torta de biscocho con crema de frutilla y decorada con fresas frescas.&#x27;,
+          precio: 18000,
+          imagen: &#x27;categorias/tortas/torta_biscocho_frutilla.jpg&#x27;,
+          datanombre: &#x27;Torta Biscocho Frutilla&#x27;
+        },
+        {
+          nombre: &#x27;Torta Selva Negra&#x27;,
+          descripcion: &#x27;Clásica torta de chocolate, crema y guindas, con virutas de chocolate amargo.&#x27;,
+          precio: 22000,
+          imagen: &#x27;categorias/tortas/torta_selva_negra.jpg&#x27;,
+          datanombre: &#x27;Torta Selva Negra&#x27;
+        },
+        {
+          nombre: &#x27;Torta Biscocho Frambuesa&#x27;,
+          descripcion: &#x27;Capas suaves de bizcocho rellenas con crema de vainilla y frambuesas naturales.&#x27;,
+          precio: 19000,
+          imagen: &#x27;categorias/tortas/torta_biscocho_frambuesa.jpg&#x27;,
+          datanombre: &#x27;Torta Biscocho Frambuesa&#x27;
+        }
       ]
     },
     {
-      nombre: &#x27;Tartas y Cheesecakes&#x27;, ruta: &#x27;tartas&#x27;, items: [{
-        nombre: &#x27;Cheesecake de Frambuesa&#x27;,
-        descripcion: &#x27;Base crocante, relleno suave y cobertura de frambuesas naturales.&#x27;,
-        precio: 19000,
-        imagen: &#x27;categorias/tartas/Cheesecake_de_Frambuesa.jpg&#x27;,
-        datanombre: &#x27;Cheesecake de Frambuesa&#x27;
-      },
-      {
-        nombre: &#x27;Cheesecake de Maracuyá&#x27;,
-        descripcion: &#x27;Cheesecake cremoso con un topping ácido y vibrante de maracuyá.&#x27;,
-        precio: 20000,
-        imagen: &#x27;categorias/tartas/Cheesecake_de_Maracuya.jpg&#x27;,
-        datanombre: &#x27;Cheesecake de Maracuya&#x27;
-      },
-      {
-        nombre: &#x27;Kuchen de Merengue Frambuesa&#x27;,
-        descripcion: &#x27;Clásico alemán con masa suave, frambuesa y merengue dorado.&#x27;,
-        precio: 18500,
-        imagen: &#x27;categorias/tartas/Kuchen_de_Merengue_Frambuesa.jpg&#x27;,
-        datanombre: &#x27;Kuchen de Merengue Frambuesa&#x27;
-      }]
+      nombre: &#x27;Tartas y Cheesecakes&#x27;,
+      ruta: &#x27;tartas&#x27;,
+      items: [
+        {
+          nombre: &#x27;Cheesecake de Frambuesa&#x27;,
+          descripcion: &#x27;Base crocante, relleno suave y cobertura de frambuesas naturales.&#x27;,
+          precio: 19000,
+          imagen: &#x27;categorias/tartas/Cheesecake_de_Frambuesa.jpg&#x27;,
+          datanombre: &#x27;Cheesecake de Frambuesa&#x27;
+        },
+        {
+          nombre: &#x27;Cheesecake de Maracuyá&#x27;,
+          descripcion: &#x27;Cheesecake cremoso con un topping ácido y vibrante de maracuyá.&#x27;,
+          precio: 20000,
+          imagen: &#x27;categorias/tartas/Cheesecake_de_Maracuya.jpg&#x27;,
+          datanombre: &#x27;Cheesecake de Maracuya&#x27;
+        },
+        {
+          nombre: &#x27;Kuchen de Merengue Frambuesa&#x27;,
+          descripcion: &#x27;Clásico alemán con masa suave, frambuesa y merengue dorado.&#x27;,
+          precio: 18500,
+          imagen: &#x27;categorias/tartas/Kuchen_de_Merengue_Frambuesa.jpg&#x27;,
+          datanombre: &#x27;Kuchen de Merengue Frambuesa&#x27;
+        }
+      ]
     },
     {
-      nombre: &#x27;Galletas y Masas&#x27;, ruta: &#x27;galletas&#x27;, items: [{
-        nombre: &#x27;Berlín Grande&#x27;,
-        descripcion: &#x27;Clásico relleno con mermelada, suave y esponjoso, ideal para un antojo dulce.&#x27;,
-        precio: 2500,
-        imagen: &#x27;categorias/galletas/Berlin_Grande_Mermelada.jpg&#x27;,
-        datanombre: &#x27;Berlín Grande&#x27;
-      },
-      {
-        nombre: &#x27;Galletas Surtidas&#x27;,
-        descripcion: &#x27;Selección artesanal de galletas de mantequilla, chocolate y frutas.&#x27;,
-        precio: 5000,
-        imagen: &#x27;categorias/galletas/Galletas_Surtidas.jpg&#x27;,
-        datanombre: &#x27;Galletas Surtidas&#x27;
-      },
-      {
-        nombre: &#x27;Palmeritas&#x27;,
-        descripcion: &#x27;Hojaldre crocante caramelizado, ligero y perfecto para acompañar el café.&#x27;,
-        precio: 3000,
-        imagen: &#x27;categorias/galletas/Palmera.jpg&#x27;,
-        datanombre: &#x27;Palmeritas&#x27;
-      }]
+      nombre: &#x27;Galletas y Masas&#x27;,
+      ruta: &#x27;galletas&#x27;,
+      items: [
+        {
+          nombre: &#x27;Berlín Grande&#x27;,
+          descripcion: &#x27;Clásico relleno con mermelada, suave y esponjoso, ideal para un antojo dulce.&#x27;,
+          precio: 2500,
+          imagen: &#x27;categorias/galletas/Berlin_Grande_Mermelada.jpg&#x27;,
+          datanombre: &#x27;Berlín Grande&#x27;
+        },
+        {
+          nombre: &#x27;Galletas Surtidas&#x27;,
+          descripcion: &#x27;Selección artesanal de galletas de mantequilla, chocolate y frutas.&#x27;,
+          precio: 5000,
+          imagen: &#x27;categorias/galletas/Galletas_Surtidas.jpg&#x27;,
+          datanombre: &#x27;Galletas Surtidas&#x27;
+        },
+        {
+          nombre: &#x27;Palmeritas&#x27;,
+          descripcion: &#x27;Hojaldre crocante caramelizado, ligero y perfecto para acompañar el café.&#x27;,
+          precio: 3000,
+          imagen: &#x27;categorias/galletas/Palmera.jpg&#x27;,
+          datanombre: &#x27;Palmeritas&#x27;
+        }
+      ]
     },
     {
-      nombre: &#x27;Chocolate y Bombones&#x27;, ruta: &#x27;chocolates&#x27;, items: [{
-        nombre: &#x27;Bombones Surtidos&#x27;,
-        descripcion: &#x27;Variedad artesanal de bombones con rellenos de frutas, licores y cremas suaves.&#x27;,
-        precio: 8500,
-        imagen: &#x27;categorias/chocolates/Bombones_surtidos.jpg&#x27;,
-        datanombre: &#x27;Bombones Surtidos&#x27;
-      },
-      {
-        nombre: &#x27;Fina Caja de Bombones&#x27;,
-        descripcion: &#x27;Presentación elegante con selección premium de bombones belgas.&#x27;,
-        precio: 23000,
-        imagen: &#x27;categorias/chocolates/Fina_Caja_de_Bombones.jpg&#x27;,
-        datanombre: &#x27;Fina Caja de Bombones&#x27;
-      },
-      {
-        nombre: &#x27;Caja de Pralinen&#x27;,
-        descripcion: &#x27;Pralinés de alta calidad con cobertura de chocolate y corazón cremoso.&#x27;,
-        precio: 15000,
-        imagen: &#x27;categorias/chocolates/Caja_de_Pralinen.jpg&#x27;,
-        datanombre: &#x27;Caja de Pralinen&#x27;
-      }]
+      nombre: &#x27;Chocolate y Bombones&#x27;,
+      ruta: &#x27;chocolates&#x27;,
+      items: [
+        {
+          nombre: &#x27;Bombones Surtidos&#x27;,
+          descripcion: &#x27;Variedad artesanal de bombones con rellenos de frutas, licores y cremas suaves.&#x27;,
+          precio: 8500,
+          imagen: &#x27;categorias/chocolates/Bombones_surtidos.jpg&#x27;,
+          datanombre: &#x27;Bombones Surtidos&#x27;
+        },
+        {
+          nombre: &#x27;Fina Caja de Bombones&#x27;,
+          descripcion: &#x27;Presentación elegante con selección premium de bombones belgas.&#x27;,
+          precio: 23000,
+          imagen: &#x27;categorias/chocolates/Fina_Caja_de_Bombones.jpg&#x27;,
+          datanombre: &#x27;Fina Caja de Bombones&#x27;
+        },
+        {
+          nombre: &#x27;Caja de Pralinen&#x27;,
+          descripcion: &#x27;Pralinés de alta calidad con cobertura de chocolate y corazón cremoso.&#x27;,
+          precio: 15000,
+          imagen: &#x27;categorias/chocolates/Caja_de_Pralinen.jpg&#x27;,
+          datanombre: &#x27;Caja de Pralinen&#x27;
+        }
+      ]
     }
   ];
 
-  constructor(private route: ActivatedRoute, private carritoService: CarritoService, private authService: AuthService){ 
+  constructor(
+    private route: ActivatedRoute,
+    private carritoService: CarritoService,
+    private authService: AuthService
+  ) {}
 
-  }
-
+  /**
+   * Carga la categoría seleccionada desde la URL y obtiene los datos del usuario autenticado.
+   */
   ngOnInit() {
     this.usuario &#x3D; this.authService.getSesion();
     this.route.paramMap.subscribe(params &#x3D;&gt; {
       const nombreCategoria &#x3D; params.get(&#x27;nombre&#x27;);
       this.categoriaSeleccionada &#x3D; this.datos.find(cat &#x3D;&gt; cat.ruta &#x3D;&#x3D;&#x3D; nombreCategoria) || null;
-
     });
   }
+
+  /**
+   * Agrega un producto al carrito del usuario autenticado.
+   * Muestra una alerta si el usuario no ha iniciado sesión.
+   * @param item Objeto del producto a agregar.
+   */
   agregarAlCarrito(item: any) {
     if (!this.usuario) {
       alert(&#x27;Debes iniciar sesión para agregar productos al carrito.&#x27;);

@@ -124,6 +124,23 @@
 </p>
 
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Componente Recuperar</p>
+<p>Permite a los usuarios restablecer su contraseña utilizando su correo electrónico.
+Al enviar un formulario válido, busca al usuario en el localStorage y actualiza su contraseña.</p>
+<p>Funcionalidades:</p>
+<ul>
+<li>Valida el formulario de recuperación con email y nuevas contraseñas.</li>
+<li>Verifica que las contraseñas ingresadas coincidan.</li>
+<li>Reemplaza la contraseña del usuario si existe en localStorage.</li>
+<li>Muestra mensajes de éxito o error según el resultado.</li>
+<li>Redirige automáticamente al inicio y abre el modal de login tras éxito.</li>
+</ul>
+
+    </p>
 
 
 
@@ -255,7 +272,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/recuperar/recuperar.ts:35</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">src/app/recuperar/recuperar.ts:58</a></div>
                             </td>
                         </tr>
 
@@ -336,19 +353,25 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="84"
-                                    class="link-to-prism">src/app/recuperar/recuperar.ts:84</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="117"
+                                    class="link-to-prism">src/app/recuperar/recuperar.ts:117</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Validador personalizado que exige al menos una mayúscula y un número.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>    <code>ValidatorFn</code>
 
                         </div>
+                            <div class="io-description">
+                                <p>ValidationErrors o null</p>
+
+                            </div>
                 </td>
             </tr>
         </tbody>
@@ -373,14 +396,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="78"
-                                    class="link-to-prism">src/app/recuperar/recuperar.ts:78</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="107"
+                                    class="link-to-prism">src/app/recuperar/recuperar.ts:107</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Limpia los mensajes y resetea el formulario.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -412,19 +437,25 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="94"
-                                    class="link-to-prism">src/app/recuperar/recuperar.ts:94</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="131"
+                                    class="link-to-prism">src/app/recuperar/recuperar.ts:131</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Validador que verifica que los campos <code>password</code> y <code>password2</code> sean iguales.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>    <code>ValidatorFn</code>
 
                         </div>
+                            <div class="io-description">
+                                <p>ValidationErrors o null</p>
+
+                            </div>
                 </td>
             </tr>
         </tbody>
@@ -449,14 +480,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="43"
-                                    class="link-to-prism">src/app/recuperar/recuperar.ts:43</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="69"
+                                    class="link-to-prism">src/app/recuperar/recuperar.ts:69</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Procesa el formulario de recuperación. Si el email existe, actualiza la contraseña.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -496,10 +529,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/recuperar/recuperar.ts:34</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/app/recuperar/recuperar.ts:53</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Mensaje de error que se muestra al usuario.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -527,10 +566,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/recuperar/recuperar.ts:35</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">src/app/recuperar/recuperar.ts:58</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Mensaje de éxito que se muestra al usuario.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -561,10 +606,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/recuperar/recuperar.ts:23</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/recuperar/recuperar.ts:39</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Formulario reactivo para ingresar email y nueva contraseña.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -588,6 +639,19 @@ import {
 import { Router } from &#x27;@angular/router&#x27;;
 import { ModalLoginService } from &#x27;../services/modal-login&#x27;;
 
+/**
+ * Componente Recuperar
+ *
+ * Permite a los usuarios restablecer su contraseña utilizando su correo electrónico.
+ * Al enviar un formulario válido, busca al usuario en el localStorage y actualiza su contraseña.
+ *
+ * Funcionalidades:
+ * - Valida el formulario de recuperación con email y nuevas contraseñas.
+ * - Verifica que las contraseñas ingresadas coincidan.
+ * - Reemplaza la contraseña del usuario si existe en localStorage.
+ * - Muestra mensajes de éxito o error según el resultado.
+ * - Redirige automáticamente al inicio y abre el modal de login tras éxito.
+ */
 @Component({
   selector: &#x27;app-recuperar&#x27;,
   standalone: true,
@@ -596,6 +660,9 @@ import { ModalLoginService } from &#x27;../services/modal-login&#x27;;
   imports: [CommonModule, ReactiveFormsModule]
 })
 export class Recuperar {
+  /**
+   * Formulario reactivo para ingresar email y nueva contraseña.
+   */
   recuperarForm &#x3D; new FormGroup({
     email: new FormControl(&#x27;&#x27;, [Validators.required, Validators.email]),
     password: new FormControl(&#x27;&#x27;, [
@@ -607,7 +674,14 @@ export class Recuperar {
     password2: new FormControl(&#x27;&#x27;, Validators.required),
   }, { validators: this.passwordsIgualesValidator() });
 
+  /**
+   * Mensaje de error que se muestra al usuario.
+   */
   error &#x3D; &#x27;&#x27;;
+
+  /**
+   * Mensaje de éxito que se muestra al usuario.
+   */
   exito &#x3D; &#x27;&#x27;;
 
   constructor(private router: Router, private modalService: ModalLoginService) {
@@ -616,6 +690,9 @@ export class Recuperar {
     });
   }
 
+  /**
+   * Procesa el formulario de recuperación. Si el email existe, actualiza la contraseña.
+   */
   recuperar() {
     this.error &#x3D; &#x27;&#x27;;
     this.exito &#x3D; &#x27;&#x27;;
@@ -651,12 +728,19 @@ export class Recuperar {
     }, 2000);
   }
 
+  /**
+   * Limpia los mensajes y resetea el formulario.
+   */
   limpiarFormulario() {
     this.recuperarForm.reset();
     this.error &#x3D; &#x27;&#x27;;
     this.exito &#x3D; &#x27;&#x27;;
   }
 
+  /**
+   * Validador personalizado que exige al menos una mayúscula y un número.
+   * @returns ValidationErrors o null
+   */
   private contraseñaFuerteValidator(): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null &#x3D;&gt; {
       const value &#x3D; control.value;
@@ -667,6 +751,10 @@ export class Recuperar {
     };
   }
 
+  /**
+   * Validador que verifica que los campos &#x60;password&#x60; y &#x60;password2&#x60; sean iguales.
+   * @returns ValidationErrors o null
+   */
   private passwordsIgualesValidator(): ValidatorFn {
     return (group: AbstractControl): ValidationErrors | null &#x3D;&gt; {
       const password &#x3D; group.get(&#x27;password&#x27;)?.value;

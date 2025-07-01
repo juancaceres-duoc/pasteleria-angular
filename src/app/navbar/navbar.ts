@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 /**
- * Componente `Navbar`
+ * Componente Navbar
  *
  * Muestra la barra de navegación principal del sitio.
  * Gestiona el estado de sesión del usuario y permite abrir el modal de login o cerrar sesión.

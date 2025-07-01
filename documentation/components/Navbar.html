@@ -124,6 +124,21 @@
 </p>
 
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Componente Navbar</p>
+<p>Muestra la barra de navegación principal del sitio.
+Gestiona el estado de sesión del usuario y permite abrir el modal de login o cerrar sesión.</p>
+<p>Funcionalidades:</p>
+<ul>
+<li>Mostrar enlaces condicionales según tipo de usuario (por ejemplo, admin).</li>
+<li>Mostrar botón de login o logout según el estado de autenticación.</li>
+<li>Abrir el modal de login desde un servicio centralizado.</li>
+</ul>
+
+    </p>
 
 
     <p class="comment">
@@ -250,12 +265,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/navbar/navbar.ts:16</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/navbar/navbar.ts:32</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Constructor del componente.</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -264,6 +281,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -278,6 +296,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>Servicio que controla la apertura del modal de login.</p>
+
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>authService</td>
@@ -290,6 +312,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>Servicio de autenticación para obtener/cerrar sesión.</p>
+
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>router</td>
@@ -302,6 +328,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>Servicio de navegación para redirigir tras logout.</p>
+
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -341,14 +371,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="34"
-                                    class="link-to-prism">src/app/navbar/navbar.ts:34</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="67"
+                                    class="link-to-prism">src/app/navbar/navbar.ts:67</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Cierra la sesión del usuario actual y redirige a la página principal.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -378,14 +410,17 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="24"
-                                    class="link-to-prism">src/app/navbar/navbar.ts:24</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="51"
+                                    class="link-to-prism">src/app/navbar/navbar.ts:51</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Método del ciclo de vida que se ejecuta al inicializar el componente.
+Se suscribe al observable de sesión para mantener el estado actualizado.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -415,14 +450,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="30"
-                                    class="link-to-prism">src/app/navbar/navbar.ts:30</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="60"
+                                    class="link-to-prism">src/app/navbar/navbar.ts:60</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Abre el modal de login al hacer clic en el botón correspondiente.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -462,10 +499,17 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/navbar/navbar.ts:16</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/navbar/navbar.ts:32</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Contiene los datos de sesión del usuario actual.
+Se actualiza automáticamente mediante suscripción al observable del AuthService.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -482,6 +526,17 @@ import { AuthService } from &#x27;../services/auth-service&#x27;;
 import { CommonModule } from &#x27;@angular/common&#x27;;
 import { RouterModule } from &#x27;@angular/router&#x27;;
 
+/**
+ * Componente Navbar
+ *
+ * Muestra la barra de navegación principal del sitio.
+ * Gestiona el estado de sesión del usuario y permite abrir el modal de login o cerrar sesión.
+ *
+ * Funcionalidades:
+ * - Mostrar enlaces condicionales según tipo de usuario (por ejemplo, admin).
+ * - Mostrar botón de login o logout según el estado de autenticación.
+ * - Abrir el modal de login desde un servicio centralizado.
+ */
 @Component({
   selector: &#x27;app-navbar&#x27;,
   standalone: true,
@@ -490,24 +545,46 @@ import { RouterModule } from &#x27;@angular/router&#x27;;
   styleUrls: [&#x27;./navbar.css&#x27;]
 })
 export class Navbar implements OnInit {
+
+  /**
+   * Contiene los datos de sesión del usuario actual.
+   * Se actualiza automáticamente mediante suscripción al observable del AuthService.
+   */
   sesion: any &#x3D; null;
 
+  /**
+   * Constructor del componente.
+   *
+   * @param modalService Servicio que controla la apertura del modal de login.
+   * @param authService Servicio de autenticación para obtener/cerrar sesión.
+   * @param router Servicio de navegación para redirigir tras logout.
+   */
   constructor(
     private modalService: ModalLoginService,
     private authService: AuthService,
     private router: Router
   ) {}
 
+  /**
+   * Método del ciclo de vida que se ejecuta al inicializar el componente.
+   * Se suscribe al observable de sesión para mantener el estado actualizado.
+   */
   ngOnInit(): void {
     this.authService.sesion$.subscribe(sesion &#x3D;&gt; {
       this.sesion &#x3D; sesion;
     });
   }
 
+  /**
+   * Abre el modal de login al hacer clic en el botón correspondiente.
+   */
   onLoginClick() {
     this.modalService.triggerOpenLoginModal();
   }
 
+  /**
+   * Cierra la sesión del usuario actual y redirige a la página principal.
+   */
   cerrarSesion() {
     this.authService.cerrarSesion();
     this.router.navigate([&#x27;/&#x27;]);

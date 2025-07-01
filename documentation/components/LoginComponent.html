@@ -124,6 +124,18 @@
 </p>
 
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Componente Login</p>
+<p>Muestra un formulario de inicio de sesión dentro de un modal.
+Se activa desde otros componentes mediante el servicio ModalLoginService.
+Verifica las credenciales usando el AuthService y redirige
+al panel de administrador o página principal según el tipo de usuario.</p>
+<p>También ofrece navegación hacia el registro de usuario y recuperación de contraseña.</p>
+
+    </p>
 
 
     <p class="comment">
@@ -155,6 +167,10 @@
                 <td class="col-md-9"><code>app-login</code></td>
             </tr>
 
+            <tr>
+                <td class="col-md-3">standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
 
             <tr>
                 <td class="col-md-3">imports</td>
@@ -263,7 +279,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/login/login.ts:26</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/login/login.ts:42</a></div>
                             </td>
                         </tr>
 
@@ -366,14 +382,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="71"
-                                    class="link-to-prism">src/app/login/login.ts:71</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="94"
+                                    class="link-to-prism">src/app/login/login.ts:94</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Cierra el modal y redirige a la vista de recuperación de contraseña</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -403,14 +421,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="66"
-                                    class="link-to-prism">src/app/login/login.ts:66</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="88"
+                                    class="link-to-prism">src/app/login/login.ts:88</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Cierra el modal y redirige a la vista de registro</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -440,14 +460,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="45"
-                                    class="link-to-prism">src/app/login/login.ts:45</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="66"
+                                    class="link-to-prism">src/app/login/login.ts:66</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Ejecuta la lógica de login y validación de credenciales</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -477,14 +499,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="76"
-                                    class="link-to-prism">src/app/login/login.ts:76</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="100"
+                                    class="link-to-prism">src/app/login/login.ts:100</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Cancela la suscripción al evento de apertura del modal</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -514,14 +538,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="40"
-                                    class="link-to-prism">src/app/login/login.ts:40</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="60"
+                                    class="link-to-prism">src/app/login/login.ts:60</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Abre el modal de login</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -561,10 +587,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/login/login.ts:23</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/login/login.ts:36</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Mensaje de error mostrado al usuario en caso de fallo</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -589,10 +621,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/login/login.ts:18</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/login/login.ts:30</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Formulario reactivo para capturar usuario y contraseña</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -625,10 +663,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/login/login.ts:25</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/login/login.ts:39</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Referencia al modal HTML del login</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -652,10 +696,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/login/login.ts:26</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/login/login.ts:42</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Suscripción al evento de apertura del modal</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -674,22 +724,38 @@ import { ModalLoginService } from &#x27;../services/modal-login&#x27;;
 import { AuthService } from &#x27;../services/auth-service&#x27;;
 import { Router } from &#x27;@angular/router&#x27;;
 
+/**
+ * Componente Login
+ *
+ * Muestra un formulario de inicio de sesión dentro de un modal.
+ * Se activa desde otros componentes mediante el servicio ModalLoginService.
+ * Verifica las credenciales usando el AuthService y redirige
+ * al panel de administrador o página principal según el tipo de usuario.
+ *
+ * También ofrece navegación hacia el registro de usuario y recuperación de contraseña.
+ */
 @Component({
-  selector: &#x27;app-login&#x27;,  
+  selector: &#x27;app-login&#x27;,
   templateUrl: &#x27;./login.html&#x27;,
   styleUrls: [&#x27;./login.css&#x27;],
+  standalone: true,
   imports: [CommonModule, ReactiveFormsModule]
 })
 export class LoginComponent implements OnDestroy {
 
+  /** Formulario reactivo para capturar usuario y contraseña */
   loginForm &#x3D; new FormGroup({
     usuario: new FormControl(&#x27;&#x27;, Validators.required),
     password: new FormControl(&#x27;&#x27;, Validators.required)
   });
 
+  /** Mensaje de error mostrado al usuario en caso de fallo */
   error: string &#x3D; &#x27;&#x27;;
 
+  /** Referencia al modal HTML del login */
   @ViewChild(&#x27;loginModal&#x27;, { static: true }) loginModal!: TemplateRef&lt;any&gt;;
+
+  /** Suscripción al evento de apertura del modal */
   private subscription: Subscription;
 
   constructor(
@@ -698,17 +764,22 @@ export class LoginComponent implements OnDestroy {
     private AuthService: AuthService,
     private route: Router
   ) {
-    this.subscription &#x3D; this.modalTrigger.openLoginModal$.subscribe(() &#x3D;&gt; this.openModal());    
+    // Suscribirse a evento para abrir el modal desde otro componente
+    this.subscription &#x3D; this.modalTrigger.openLoginModal$.subscribe(() &#x3D;&gt; this.openModal());
+
+    // Limpiar errores al modificar el formulario
     this.loginForm.valueChanges.subscribe(() &#x3D;&gt; {
       this.error &#x3D; &#x27;&#x27;;
     });
   }
 
+  /** Abre el modal de login */
   openModal() {
     this.error &#x3D; &#x27;&#x27;;
     this.modalService.open(this.loginModal, { size: &#x27;lg&#x27;, centered: true, backdrop: &#x27;static&#x27; });
   }
 
+  /** Ejecuta la lógica de login y validación de credenciales */
   login() {
     this.error &#x3D; &#x27;&#x27;;
 
@@ -730,16 +801,19 @@ export class LoginComponent implements OnDestroy {
     }
   }
 
+  /** Cierra el modal y redirige a la vista de registro */
   irARegistro() {
     this.modalService.dismissAll();
     this.route.navigate([&#x27;/registro&#x27;]);
   }
 
+  /** Cierra el modal y redirige a la vista de recuperación de contraseña */
   irARecuperar() {
     this.modalService.dismissAll();
     this.route.navigate([&#x27;/recuperar&#x27;]);
   }
 
+  /** Cancela la suscripción al evento de apertura del modal */
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }

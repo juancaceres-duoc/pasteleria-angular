@@ -124,6 +124,22 @@
 </p>
 
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Componente Perfil</p>
+<p>Permite al usuario autenticado visualizar y editar su información de perfil,
+como email, contraseña, dirección y fecha de nacimiento.</p>
+<p>Funcionalidades:</p>
+<ul>
+<li>Carga automática del usuario autenticado desde localStorage.</li>
+<li>Muestra un formulario reactivo con validaciones.</li>
+<li>Permite editar y guardar los cambios en el perfil.</li>
+<li>Aplica una validación personalizada para asegurar contraseñas fuertes.</li>
+</ul>
+
+    </p>
 
 
     <p class="comment">
@@ -284,19 +300,26 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="82"
-                                    class="link-to-prism">src/app/perfil/perfil.ts:82</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="119"
+                                    class="link-to-prism">src/app/perfil/perfil.ts:119</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Validador personalizado para contraseñas fuertes.
+Requiere al menos una mayúscula y un número.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>    <code>ValidatorFn</code>
 
                         </div>
+                            <div class="io-description">
+                                <p>ValidatorFn función de validación.</p>
+
+                            </div>
                 </td>
             </tr>
         </tbody>
@@ -321,14 +344,17 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="63"
-                                    class="link-to-prism">src/app/perfil/perfil.ts:63</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="94"
+                                    class="link-to-prism">src/app/perfil/perfil.ts:94</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Procesa la edición del perfil, actualizando los datos del usuario
+en localStorage si el formulario es válido.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -358,14 +384,17 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="41"
-                                    class="link-to-prism">src/app/perfil/perfil.ts:41</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="68"
+                                    class="link-to-prism">src/app/perfil/perfil.ts:68</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Inicializa el componente, cargando los datos del usuario autenticado
+y configurando el formulario con los valores existentes.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -411,10 +440,17 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/perfil/perfil.ts:22</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/perfil/perfil.ts:38</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Formulario reactivo para editar el perfil del usuario.
+Contiene validaciones estándar y personalizadas.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -442,10 +478,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/perfil/perfil.ts:37</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">src/app/perfil/perfil.ts:56</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Mensaje de error al validar el formulario</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -473,10 +515,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/perfil/perfil.ts:36</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/app/perfil/perfil.ts:53</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Mensaje de éxito al guardar cambios</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -504,10 +552,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/perfil/perfil.ts:39</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/app/perfil/perfil.ts:62</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Usuario actualmente autenticado</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -535,10 +589,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/perfil/perfil.ts:38</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/app/perfil/perfil.ts:59</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Lista de usuarios cargados desde el almacenamiento local</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -560,6 +620,18 @@ import {
 } from &#x27;@angular/forms&#x27;;
 import { CommonModule } from &#x27;@angular/common&#x27;;
 
+/**
+ * Componente Perfil
+ *
+ * Permite al usuario autenticado visualizar y editar su información de perfil,
+ * como email, contraseña, dirección y fecha de nacimiento.
+ *
+ * Funcionalidades:
+ * - Carga automática del usuario autenticado desde localStorage.
+ * - Muestra un formulario reactivo con validaciones.
+ * - Permite editar y guardar los cambios en el perfil.
+ * - Aplica una validación personalizada para asegurar contraseñas fuertes.
+ */
 @Component({
   selector: &#x27;app-perfil&#x27;,
   standalone: true,
@@ -569,6 +641,10 @@ import { CommonModule } from &#x27;@angular/common&#x27;;
 })
 export class Perfil implements OnInit {
 
+  /**
+   * Formulario reactivo para editar el perfil del usuario.
+   * Contiene validaciones estándar y personalizadas.
+   */
   editarPerfilForm &#x3D; new FormGroup({
     usuario: new FormControl({ value: &#x27;&#x27;, disabled: true }, Validators.required),
     email: new FormControl(&#x27;&#x27;, [Validators.required, Validators.email]),
@@ -583,11 +659,22 @@ export class Perfil implements OnInit {
     tipo: new FormControl({ value: &#x27;&#x27;, disabled: true }, Validators.required)
   });
 
+  /** Mensaje de éxito al guardar cambios */
   mensaje &#x3D; &#x27;&#x27;;
+
+  /** Mensaje de error al validar el formulario */
   error &#x3D; &#x27;&#x27;;
+
+  /** Lista de usuarios cargados desde el almacenamiento local */
   usuarios: any[] &#x3D; [];
+
+  /** Usuario actualmente autenticado */
   usuarioOriginal &#x3D; &#x27;&#x27;;
 
+  /**
+   * Inicializa el componente, cargando los datos del usuario autenticado
+   * y configurando el formulario con los valores existentes.
+   */
   ngOnInit() {
     const sesionStr &#x3D; localStorage.getItem(&#x27;sesion&#x27;);
     const sesion &#x3D; sesionStr ? JSON.parse(sesionStr) : null;
@@ -610,6 +697,10 @@ export class Perfil implements OnInit {
     }
   }
 
+  /**
+   * Procesa la edición del perfil, actualizando los datos del usuario
+   * en localStorage si el formulario es válido.
+   */
   editarPerfil() {
     if (this.editarPerfilForm.invalid) {
       this.error &#x3D; &#x27;Por favor completa todos los campos correctamente.&#x27;;
@@ -629,6 +720,12 @@ export class Perfil implements OnInit {
     }
   }
 
+  /**
+   * Validador personalizado para contraseñas fuertes.
+   * Requiere al menos una mayúscula y un número.
+   * 
+   * @returns ValidatorFn función de validación.
+   */
   private contraseñaFuerteValidator(): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null &#x3D;&gt; {
       const value &#x3D; control.value;

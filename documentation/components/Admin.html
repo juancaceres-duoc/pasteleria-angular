@@ -120,6 +120,21 @@
 </p>
 
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Componente Admin</p>
+<p>Este componente representa el panel de control del administrador.
+Permite visualizar y eliminar usuarios registrados en la aplicación,
+accediendo a los datos almacenados en el <code>localStorage</code>.</p>
+<p>Funcionalidades:</p>
+<ul>
+<li>Carga la lista de usuarios desde localStorage al iniciar.</li>
+<li>Permite eliminar usuarios excepto al usuario con correo &#39;<a href="mailto:admin@dessertico.cl">admin@dessertico.cl</a>&#39;.</li>
+</ul>
+
+    </p>
 
 
     <p class="comment">
@@ -261,8 +276,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="24"
-                                    class="link-to-prism">src/app/admin/admin.ts:24</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="36"
+                                    class="link-to-prism">src/app/admin/admin.ts:36</a></div>
                         </td>
                     </tr>
 
@@ -328,8 +343,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="15"
-                                    class="link-to-prism">src/app/admin/admin.ts:15</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="27"
+                                    class="link-to-prism">src/app/admin/admin.ts:27</a></div>
                         </td>
                     </tr>
 
@@ -375,7 +390,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/admin/admin.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/admin/admin.ts:25</a></div>
                         </td>
                     </tr>
 
@@ -390,6 +405,18 @@
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 import { CommonModule } from &#x27;@angular/common&#x27;;
+
+/**
+ * Componente Admin
+ * 
+ * Este componente representa el panel de control del administrador.
+ * Permite visualizar y eliminar usuarios registrados en la aplicación,
+ * accediendo a los datos almacenados en el &#x60;localStorage&#x60;.
+ * 
+ * Funcionalidades:
+ * - Carga la lista de usuarios desde localStorage al iniciar.
+ * - Permite eliminar usuarios excepto al usuario con correo &#x27;admin@dessertico.cl&#x27;.
+ */
 
 @Component({
   selector: &#x27;app-admin&#x27;,
