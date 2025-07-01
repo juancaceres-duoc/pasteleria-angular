@@ -1,0 +1,38 @@
+<nav class="navbar-personalizado">
+    <div class="contenedor">
+        <div class="logo">
+            <img src="dessertico-logo.jpg" alt="Logo Dessértico" />
+        </div>
+        <ul class="menu">
+            <li><a href="#">Inicio</a></li>
+            <li class="submenu">
+                <a href="#">Nuestros Postres</a>
+                <ul class="dropdown">
+                    <li><a [routerLink]="['/categoria', 'tortas']">Tortas y Pasteles</a></li>
+                    <li><a [routerLink]="['/categoria', 'tartas']">Tartas y Cheesecakes</a></li>
+                    <li><a [routerLink]="['/categoria', 'galletas']">Galletas y Masas</a></li>
+                    <li><a [routerLink]="['/categoria', 'chocolates']">Chocolate y Bombones</a></li>
+                </ul>
+            </li>
+            <ng-container *ngIf="sesion?.logueado">
+                <li class="nav-item" *ngIf="sesion?.tipo === 'admin'">
+                    <a class="nav-link" routerLink="/admin">Panel Control</a>
+                </li>
+                <li class="nav-item" *ngIf="sesion?.tipo !== 'admin'">
+                    <a class="nav-link" routerLink="/perfil">Mi Perfil</a>
+                </li>
+                <li class="nav-item" *ngIf="sesion?.tipo !== 'admin'">
+                    <a class="nav-link" routerLink="/carrito">Carrito</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " (click)="cerrarSesion()" style="cursor: pointer;">Cerrar sesión</a>
+                </li>
+            </ng-container>
+            <ng-container *ngIf="!sesion?.logueado">
+                <li>
+                    <a href="" (click)="onLoginClick(); $event.preventDefault()">Iniciar Sesión</a>
+                </li>
+            </ng-container>
+        </ul>
+    </div>
+</nav>

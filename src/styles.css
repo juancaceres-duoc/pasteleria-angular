@@ -1,1 +1,518 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --color-principal: #4a2c1e;
+  --color-secundario: #a05a2c;
+  --color-header: #ffe8a3;
+  --color-fondo: #fef6df;
+  --color-texto: #3d2b1f;
+  --color-texto-secundario: #6a3b1f;
+  --color-border: #e2d6c1;
+  --fuente-principal: 'Segoe UI', sans-serif;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: var(--fuente-principal);
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  display: flex;
+  flex-direction: column;
+  
+}
+
+main {
+  flex: 1;
+}
+
+.navbar-personalizado {
+  background-color: var(--color-fondo);
+  padding: 0.2rem 1rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.contenedor {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  height: 100px;
+  width: auto;
+  display: block;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: var(--color-texto);
+  padding: 0.25rem 0.4rem;
+  line-height: 1;
+}
+
+.menu li a:hover {
+  color: var(--color-secundario);
+}
+
+header {
+  background: var(--color-header);
+  text-align: center;
+  padding: 4rem 1rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+header p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.seccion {
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.seccion h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--color-secundario);
+}
+
+.tarjetas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.tarjeta {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1rem;
+  max-width: 300px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: transform 0.1s ease-in-out;
+}
+
+.tarjeta:hover {
+  transform: scale(1.05);
+}
+
+.tarjeta img {
+  width: 75%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.tarjeta h3 {
+  margin-bottom: 0.5rem;
+  color: var(--color-texto-secundario);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.tarjeta a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.tarjeta a:hover {
+  color: var(--color-secundario);
+}
+
+.footer {
+  background-color: var(--color-texto);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+.footer p {
+  margin: 0.2rem 0;
+}
+
+.submenu {
+  position: relative;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--color-fondo);
+  border: 1px solid var(--color-border);
+  list-style: none;
+  padding: 0.5rem 0;
+  margin: 0;
+  display: none;
+  min-width: 180px;
+  z-index: 999;
+}
+
+.dropdown li {
+  padding: 0;
+}
+
+.dropdown li a {
+  display: block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: var(--color-texto);
+  white-space: nowrap;
+}
+
+.dropdown li a:hover {
+  background-color: var(--color-header);
+  color: var(--color-secundario);
+}
+
+.submenu:hover .dropdown {
+  display: block;
+}
+
+.galeria-productos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.producto {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  max-width: 280px;
+  transition: transform 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  height: 100%;
+  
+}
+
+.producto:hover {
+  transform: scale(1.02);
+}
+
+.producto img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 4/3;
+}
+
+.producto .info {
+  padding: 1rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-height: 240px;
+}
+
+.producto .btn-dulce {
+  margin-top: auto;
+  align-self: stretch; /* opcional: botón de ancho completo */
+}
+
+.producto h3 {
+  margin-bottom: 0.5rem;
+  color: var(--color-texto-secundario);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.producto p {
+  font-size: 0.9rem;
+  color: var(--color-texto);
+  margin-bottom: 0.5rem;
+}
+
+.producto .precio {
+  font-weight: bold;
+  color: var(--color-secundario);
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.formulario-contacto {
+  max-width: 600px;
+  margin: 0.25rem auto 0 auto;
+  text-align: left;
+}
+
+.formulario-registro, .formulario-perfil, .formulario-recuperar{
+  max-width: 400px;
+  margin: 0.25rem auto 0 auto;
+  text-align: left;
+}
+
+.formulario-contacto .campo, .formulario-registro .campo, .formulario-perfil .campo, .formulario-recuperar .campo {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.formulario-contacto label, .formulario-registro label, .formulario-perfil label, .formulario-recuperar label {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--color-texto-secundario);
+}
+
+
+.formulario-contacto input,
+.formulario-contacto textarea,
+.formulario-registro input,
+.formulario-registro textarea,
+.formulario-perfil input,
+.formulario-perfil textarea,
+.formulario-recuperar input,
+.formulario-recuperar textarea {
+  padding: 0.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: #fff;
+  font-family: var(--fuente-principal);
+  color: var(--color-texto);
+}
+
+.formulario-contacto input:focus,
+.formulario-contacto textarea:focus,
+.formulario-registro input:focus,
+.formulario-registro textarea:focus,
+.formulario-perfil input:focus,
+.formulario-perfil textarea:focus,
+.formulario-recuperar input:focus,
+.formulario-recuperar textarea:focus {
+  border-color: var(--color-secundario);
+  outline: none;
+}
+
+.btn-dulce {
+  background-color: var(--color-principal);
+  color: #fff;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s ease-in-out;  
+}
+
+.btn-dulce:hover {
+  background-color: var(--color-secundario);  
+}
+
+.btn-pequeño {
+  padding: 0.3rem 0.8rem;
+  font-size: 0.9rem;
+  min-width: 30px;
+}
+
+.botones-carrito {
+  display: flex;
+  justify-content: center; 
+  gap: 3rem; 
+  margin-top: 1rem;
+}
+
+.seccion-contacto h2 {
+  margin-bottom: 0.5rem;
+}
+
+.seccion-contacto h3 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+  font-weight: normal;
+  color: var(--color-texto-secundario);
+}
+
+.formulario-contacto form {
+  display: flex;
+  flex-direction: column;
+}
+
+.formulario-contacto .btn-dulce {
+  align-self: flex-end;
+  margin-top: 0.5rem;  
+}
+
+.error-mensaje {
+  color: #b60000;
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+}
+
+.campo-error {
+  border-color: #b60000 !important;
+}
+
+.bg-login {
+  background-color: var(--color-fondo); 
+  color: var(--color-texto);  
+  font-family: var(--fuente-principal);
+  font-size: 1.75rem;
+  border-top-left-radius: 0.8rem;
+  border-bottom-left-radius: 0.8rem;
+  overflow: hidden;  
+}
+
+.tabla-usuarios-contenedor {
+  max-width: 700px;
+  margin: 2rem auto;  
+  background-color: white;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  overflow-x: auto;
+}
+
+.tabla-usuarios table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--fuente-principal);
+  color: var(--color-texto);
+  
+}
+
+.tabla-usuarios thead {
+  background-color: var(--color-header);
+  color: var(--color-texto-secundario);
+  font-weight: 700;
+    
+}
+
+.tabla-usuarios th,
+.tabla-usuarios td {
+  padding: 0.75rem;
+  text-align: center;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.tabla-usuarios tbody tr:hover {
+  background-color: #fff5e1;
+}
+
+.tabla-usuarios th {
+  font-weight: 600;
+}
+
+
+@media (max-width: 576px) {
+  .contenedor {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .menu {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .logo img {
+    height: 60px;
+  }
+
+  .galeria-productos,
+  .tarjetas {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .producto,
+  .tarjeta {
+    width: 90%;
+    max-width: 360px;
+  }
+
+  .formulario-contacto {
+    padding: 0 1rem;
+  }
+
+  .formulario-contacto .btn-dulce {
+    width: 100%;
+    align-self: center;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 1199px) {
+  .contenedor {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1.5rem;
+  }
+
+  .menu {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .logo img {
+    height: 80px;
+  }
+
+  .galeria-productos,
+  .tarjetas {
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .producto,
+  .tarjeta {
+    flex: 1 1 300px;
+    max-width: 320px;
+  }
+
+  .formulario-contacto {
+    padding: 0 1.5rem;
+  }
+
+  .formulario-contacto .btn-dulce {
+    align-self: flex-end;
+    width: auto;
+  }
+}
+
+@media (min-width: 1200px) {
+  .contenedor {
+    max-width: 1200px;
+    padding: 0 2rem;
+  }
+
+  .galeria-productos,
+  .tarjetas {
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .producto,
+  .tarjeta {
+    max-width: 300px;
+  }
+}

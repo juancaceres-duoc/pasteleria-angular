@@ -1,0 +1,23 @@
+<main>
+    <section class="seccion">
+        <h2>{{ categoriaSeleccionada.nombre }}</h2>
+        <div class="galeria-productos">
+            <div class="producto" *ngFor="let item of categoriaSeleccionada.items">
+                <img [src]="item.imagen" [alt]="item.datanombre">
+                <div class="info">
+                    <h3>{{item.nombre}}</h3>
+                    <p>{{item.descripcion}}</p>
+                    <span class="precio">${{item.precio}}</span>
+                    <button class="btn-dulce" (click)="agregarAlCarrito(item)">
+                        Agregar al carrito</button>
+                </div>
+            </div>            
+        </div>
+    </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <p>Dessértico by JC | 2025</p>
+    <p>Todos los derechos reservados</p>
+</footer>

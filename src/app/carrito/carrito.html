@@ -1,0 +1,45 @@
+<section [ngClass]="{'carrito-container': carrito.length > 0}">
+  <table class="carrito-table" *ngIf="carrito.length > 0; else carritoVacio">
+    <thead>
+      <tr>
+        <th>Producto</th>
+        <th>Precio</th>
+        <th>Cantidad</th>
+        <th>Subtotal</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of carrito; let i = index">
+        <td class="producto-info">          
+          <img [src]="item.imagen" alt="{{ item.nombre }}" class="img-carrito" />
+          <span>{{ item.nombre }}</span>
+        </td>
+        <td>${{ item.precio }}</td>
+        <td>
+          <button (click)="disminuirCantidad(i)" [disabled]="item.cantidad <= 1">-</button>
+          {{ item.cantidad }}
+          <button (click)="aumentarCantidad(i)">+</button>
+        </td>
+        <td>${{ item.precio * item.cantidad }}</td>
+        <td>
+          <button (click)="eliminarProducto(i)" class="btn-eliminar">🗑️</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ng-template #carritoVacio>
+  <div class="mensaje-vacio">
+    <p>Tu carrito está vacío.</p>
+  </div>
+</ng-template>
+
+  <div *ngIf="carrito.length > 0" class="total-y-acciones">
+    <strong>Total: ${{ calcularTotal() }}</strong>
+    <div class="acciones-botones">
+      <button (click)="vaciarCarrito()" class="btn-dulce">Vaciar carrito</button>
+      <button (click)="procesarPago()" class="btn-dulce">Procesar Pago</button>
+    </div>
+  </div>
+</section>

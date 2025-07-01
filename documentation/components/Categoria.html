@@ -1,0 +1,920 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>web-app documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">web-app documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  Categoria</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/categoria/categoria.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-categoria</code></td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>CommonModule</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./categoria.html</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./categoria.css</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#categoriaSeleccionada" >categoriaSeleccionada</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#datos" >datos</a>
+                            </li>
+                            <li>
+                                <a href="#usuario" >usuario</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#agregarAlCarrito" >agregarAlCarrito</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(route: ActivatedRoute, carritoService: <a href="../injectables/CarritoService.html" target="_self">CarritoService</a>, authService: <a href="../injectables/AuthService.html" target="_self">AuthService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="116" class="link-to-prism">src/app/categoria/categoria.ts:116</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                    <code>ActivatedRoute</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>carritoService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/CarritoService.html" target="_self" >CarritoService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>authService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="agregarAlCarrito"></a>
+                    <span class="name">
+                        <span ><b>agregarAlCarrito</b></span>
+                        <a href="#agregarAlCarrito"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>agregarAlCarrito(item: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="130"
+                                    class="link-to-prism">src/app/categoria/categoria.ts:130</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>item</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="122"
+                                    class="link-to-prism">src/app/categoria/categoria.ts:122</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="categoriaSeleccionada"></a>
+                    <span class="name">
+                        <span ><b>categoriaSeleccionada</b></span>
+                        <a href="#categoriaSeleccionada"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/categoria/categoria.ts:15</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="datos"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>datos</b></span>
+                        <a href="#datos"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+    {
+      nombre: &#x27;Tortas y Pasteles&#x27;,
+      ruta: &#x27;tortas&#x27;,
+      items: [{
+        nombre: &#x27;Torta de Biscocho Frutilla&#x27;,
+        descripcion: &#x27;Deliciosa torta de biscocho con crema de frutilla y decorada con fresas frescas.&#x27;,
+        precio: 18000,
+        imagen: &#x27;categorias/tortas/torta_biscocho_frutilla.jpg&#x27;,
+        datanombre: &#x27;Torta Biscocho Frutilla&#x27;
+      },
+      {
+        nombre: &#x27;Torta Selva Negra&#x27;,
+        descripcion: &#x27;Clásica torta de chocolate, crema y guindas, con virutas de chocolate amargo.&#x27;,
+        precio: 22000,
+        imagen: &#x27;categorias/tortas/torta_selva_negra.jpg&#x27;,
+        datanombre: &#x27;Torta Selva Negra&#x27;
+      },
+      {
+        nombre: &#x27;Torta Biscocho Frambuesa&#x27;,
+        descripcion: &#x27;Capas suaves de bizcocho rellenas con crema de vainilla y frambuesas naturales.&#x27;,
+        precio: 19000,
+        imagen: &#x27;categorias/tortas/torta_biscocho_frambuesa.jpg&#x27;,
+        datanombre: &#x27;Torta Biscocho Frambuesa&#x27;
+      }
+
+
+      ]
+    },
+    {
+      nombre: &#x27;Tartas y Cheesecakes&#x27;, ruta: &#x27;tartas&#x27;, items: [{
+        nombre: &#x27;Cheesecake de Frambuesa&#x27;,
+        descripcion: &#x27;Base crocante, relleno suave y cobertura de frambuesas naturales.&#x27;,
+        precio: 19000,
+        imagen: &#x27;categorias/tartas/Cheesecake_de_Frambuesa.jpg&#x27;,
+        datanombre: &#x27;Cheesecake de Frambuesa&#x27;
+      },
+      {
+        nombre: &#x27;Cheesecake de Maracuyá&#x27;,
+        descripcion: &#x27;Cheesecake cremoso con un topping ácido y vibrante de maracuyá.&#x27;,
+        precio: 20000,
+        imagen: &#x27;categorias/tartas/Cheesecake_de_Maracuya.jpg&#x27;,
+        datanombre: &#x27;Cheesecake de Maracuya&#x27;
+      },
+      {
+        nombre: &#x27;Kuchen de Merengue Frambuesa&#x27;,
+        descripcion: &#x27;Clásico alemán con masa suave, frambuesa y merengue dorado.&#x27;,
+        precio: 18500,
+        imagen: &#x27;categorias/tartas/Kuchen_de_Merengue_Frambuesa.jpg&#x27;,
+        datanombre: &#x27;Kuchen de Merengue Frambuesa&#x27;
+      }]
+    },
+    {
+      nombre: &#x27;Galletas y Masas&#x27;, ruta: &#x27;galletas&#x27;, items: [{
+        nombre: &#x27;Berlín Grande&#x27;,
+        descripcion: &#x27;Clásico relleno con mermelada, suave y esponjoso, ideal para un antojo dulce.&#x27;,
+        precio: 2500,
+        imagen: &#x27;categorias/galletas/Berlin_Grande_Mermelada.jpg&#x27;,
+        datanombre: &#x27;Berlín Grande&#x27;
+      },
+      {
+        nombre: &#x27;Galletas Surtidas&#x27;,
+        descripcion: &#x27;Selección artesanal de galletas de mantequilla, chocolate y frutas.&#x27;,
+        precio: 5000,
+        imagen: &#x27;categorias/galletas/Galletas_Surtidas.jpg&#x27;,
+        datanombre: &#x27;Galletas Surtidas&#x27;
+      },
+      {
+        nombre: &#x27;Palmeritas&#x27;,
+        descripcion: &#x27;Hojaldre crocante caramelizado, ligero y perfecto para acompañar el café.&#x27;,
+        precio: 3000,
+        imagen: &#x27;categorias/galletas/Palmera.jpg&#x27;,
+        datanombre: &#x27;Palmeritas&#x27;
+      }]
+    },
+    {
+      nombre: &#x27;Chocolate y Bombones&#x27;, ruta: &#x27;chocolates&#x27;, items: [{
+        nombre: &#x27;Bombones Surtidos&#x27;,
+        descripcion: &#x27;Variedad artesanal de bombones con rellenos de frutas, licores y cremas suaves.&#x27;,
+        precio: 8500,
+        imagen: &#x27;categorias/chocolates/Bombones_surtidos.jpg&#x27;,
+        datanombre: &#x27;Bombones Surtidos&#x27;
+      },
+      {
+        nombre: &#x27;Fina Caja de Bombones&#x27;,
+        descripcion: &#x27;Presentación elegante con selección premium de bombones belgas.&#x27;,
+        precio: 23000,
+        imagen: &#x27;categorias/chocolates/Fina_Caja_de_Bombones.jpg&#x27;,
+        datanombre: &#x27;Fina Caja de Bombones&#x27;
+      },
+      {
+        nombre: &#x27;Caja de Pralinen&#x27;,
+        descripcion: &#x27;Pralinés de alta calidad con cobertura de chocolate y corazón cremoso.&#x27;,
+        precio: 15000,
+        imagen: &#x27;categorias/chocolates/Caja_de_Pralinen.jpg&#x27;,
+        datanombre: &#x27;Caja de Pralinen&#x27;
+      }]
+    }
+  ]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/categoria/categoria.ts:18</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="usuario"></a>
+                    <span class="name">
+                        <span ><b>usuario</b></span>
+                        <a href="#usuario"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/categoria/categoria.ts:16</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { ActivatedRoute } from &#x27;@angular/router&#x27;;
+import { CommonModule } from &#x27;@angular/common&#x27;;
+import { CarritoService, Producto } from &#x27;../services/carrito-service&#x27;;
+import { AuthService } from &#x27;../services/auth-service&#x27;;
+
+@Component({
+  selector: &#x27;app-categoria&#x27;,
+  imports: [CommonModule],
+  templateUrl: &#x27;./categoria.html&#x27;,
+  styleUrl: &#x27;./categoria.css&#x27;
+})
+
+export class Categoria implements OnInit {
+  categoriaSeleccionada: any &#x3D; null;
+  usuario: any &#x3D; null;
+
+  private datos &#x3D; [
+    {
+      nombre: &#x27;Tortas y Pasteles&#x27;,
+      ruta: &#x27;tortas&#x27;,
+      items: [{
+        nombre: &#x27;Torta de Biscocho Frutilla&#x27;,
+        descripcion: &#x27;Deliciosa torta de biscocho con crema de frutilla y decorada con fresas frescas.&#x27;,
+        precio: 18000,
+        imagen: &#x27;categorias/tortas/torta_biscocho_frutilla.jpg&#x27;,
+        datanombre: &#x27;Torta Biscocho Frutilla&#x27;
+      },
+      {
+        nombre: &#x27;Torta Selva Negra&#x27;,
+        descripcion: &#x27;Clásica torta de chocolate, crema y guindas, con virutas de chocolate amargo.&#x27;,
+        precio: 22000,
+        imagen: &#x27;categorias/tortas/torta_selva_negra.jpg&#x27;,
+        datanombre: &#x27;Torta Selva Negra&#x27;
+      },
+      {
+        nombre: &#x27;Torta Biscocho Frambuesa&#x27;,
+        descripcion: &#x27;Capas suaves de bizcocho rellenas con crema de vainilla y frambuesas naturales.&#x27;,
+        precio: 19000,
+        imagen: &#x27;categorias/tortas/torta_biscocho_frambuesa.jpg&#x27;,
+        datanombre: &#x27;Torta Biscocho Frambuesa&#x27;
+      }
+
+
+      ]
+    },
+    {
+      nombre: &#x27;Tartas y Cheesecakes&#x27;, ruta: &#x27;tartas&#x27;, items: [{
+        nombre: &#x27;Cheesecake de Frambuesa&#x27;,
+        descripcion: &#x27;Base crocante, relleno suave y cobertura de frambuesas naturales.&#x27;,
+        precio: 19000,
+        imagen: &#x27;categorias/tartas/Cheesecake_de_Frambuesa.jpg&#x27;,
+        datanombre: &#x27;Cheesecake de Frambuesa&#x27;
+      },
+      {
+        nombre: &#x27;Cheesecake de Maracuyá&#x27;,
+        descripcion: &#x27;Cheesecake cremoso con un topping ácido y vibrante de maracuyá.&#x27;,
+        precio: 20000,
+        imagen: &#x27;categorias/tartas/Cheesecake_de_Maracuya.jpg&#x27;,
+        datanombre: &#x27;Cheesecake de Maracuya&#x27;
+      },
+      {
+        nombre: &#x27;Kuchen de Merengue Frambuesa&#x27;,
+        descripcion: &#x27;Clásico alemán con masa suave, frambuesa y merengue dorado.&#x27;,
+        precio: 18500,
+        imagen: &#x27;categorias/tartas/Kuchen_de_Merengue_Frambuesa.jpg&#x27;,
+        datanombre: &#x27;Kuchen de Merengue Frambuesa&#x27;
+      }]
+    },
+    {
+      nombre: &#x27;Galletas y Masas&#x27;, ruta: &#x27;galletas&#x27;, items: [{
+        nombre: &#x27;Berlín Grande&#x27;,
+        descripcion: &#x27;Clásico relleno con mermelada, suave y esponjoso, ideal para un antojo dulce.&#x27;,
+        precio: 2500,
+        imagen: &#x27;categorias/galletas/Berlin_Grande_Mermelada.jpg&#x27;,
+        datanombre: &#x27;Berlín Grande&#x27;
+      },
+      {
+        nombre: &#x27;Galletas Surtidas&#x27;,
+        descripcion: &#x27;Selección artesanal de galletas de mantequilla, chocolate y frutas.&#x27;,
+        precio: 5000,
+        imagen: &#x27;categorias/galletas/Galletas_Surtidas.jpg&#x27;,
+        datanombre: &#x27;Galletas Surtidas&#x27;
+      },
+      {
+        nombre: &#x27;Palmeritas&#x27;,
+        descripcion: &#x27;Hojaldre crocante caramelizado, ligero y perfecto para acompañar el café.&#x27;,
+        precio: 3000,
+        imagen: &#x27;categorias/galletas/Palmera.jpg&#x27;,
+        datanombre: &#x27;Palmeritas&#x27;
+      }]
+    },
+    {
+      nombre: &#x27;Chocolate y Bombones&#x27;, ruta: &#x27;chocolates&#x27;, items: [{
+        nombre: &#x27;Bombones Surtidos&#x27;,
+        descripcion: &#x27;Variedad artesanal de bombones con rellenos de frutas, licores y cremas suaves.&#x27;,
+        precio: 8500,
+        imagen: &#x27;categorias/chocolates/Bombones_surtidos.jpg&#x27;,
+        datanombre: &#x27;Bombones Surtidos&#x27;
+      },
+      {
+        nombre: &#x27;Fina Caja de Bombones&#x27;,
+        descripcion: &#x27;Presentación elegante con selección premium de bombones belgas.&#x27;,
+        precio: 23000,
+        imagen: &#x27;categorias/chocolates/Fina_Caja_de_Bombones.jpg&#x27;,
+        datanombre: &#x27;Fina Caja de Bombones&#x27;
+      },
+      {
+        nombre: &#x27;Caja de Pralinen&#x27;,
+        descripcion: &#x27;Pralinés de alta calidad con cobertura de chocolate y corazón cremoso.&#x27;,
+        precio: 15000,
+        imagen: &#x27;categorias/chocolates/Caja_de_Pralinen.jpg&#x27;,
+        datanombre: &#x27;Caja de Pralinen&#x27;
+      }]
+    }
+  ];
+
+  constructor(private route: ActivatedRoute, private carritoService: CarritoService, private authService: AuthService){ 
+
+  }
+
+  ngOnInit() {
+    this.usuario &#x3D; this.authService.getSesion();
+    this.route.paramMap.subscribe(params &#x3D;&gt; {
+      const nombreCategoria &#x3D; params.get(&#x27;nombre&#x27;);
+      this.categoriaSeleccionada &#x3D; this.datos.find(cat &#x3D;&gt; cat.ruta &#x3D;&#x3D;&#x3D; nombreCategoria) || null;
+
+    });
+  }
+  agregarAlCarrito(item: any) {
+    if (!this.usuario) {
+      alert(&#x27;Debes iniciar sesión para agregar productos al carrito.&#x27;);
+      return;
+    }
+
+    const producto: Producto &#x3D; {
+      nombre: item.datanombre,
+      precio: item.precio,
+      cantidad: 1,
+      imagen: item.imagen
+    };
+
+    this.carritoService.agregarProducto(this.usuario.usuario, producto);
+    alert(&#x60;Agregado: ${producto.nombre}&#x60;);
+  }
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;main&gt;
+    &lt;section class&#x3D;&quot;seccion&quot;&gt;
+        &lt;h2&gt;{{ categoriaSeleccionada.nombre }}&lt;/h2&gt;
+        &lt;div class&#x3D;&quot;galeria-productos&quot;&gt;
+            &lt;div class&#x3D;&quot;producto&quot; *ngFor&#x3D;&quot;let item of categoriaSeleccionada.items&quot;&gt;
+                &lt;img [src]&#x3D;&quot;item.imagen&quot; [alt]&#x3D;&quot;item.datanombre&quot;&gt;
+                &lt;div class&#x3D;&quot;info&quot;&gt;
+                    &lt;h3&gt;{{item.nombre}}&lt;/h3&gt;
+                    &lt;p&gt;{{item.descripcion}}&lt;/p&gt;
+                    &lt;span class&#x3D;&quot;precio&quot;&gt;${{item.precio}}&lt;/span&gt;
+                    &lt;button class&#x3D;&quot;btn-dulce&quot; (click)&#x3D;&quot;agregarAlCarrito(item)&quot;&gt;
+                        Agregar al carrito&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;            
+        &lt;/div&gt;
+    &lt;/section&gt;
+&lt;/main&gt;
+
+&lt;!-- FOOTER --&gt;
+&lt;footer class&#x3D;&quot;footer&quot;&gt;
+    &lt;p&gt;Dessértico by JC | 2025&lt;/p&gt;
+    &lt;p&gt;Todos los derechos reservados&lt;/p&gt;
+&lt;/footer&gt;</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><main>    <section class="seccion">        <h2>{{ categoriaSeleccionada.nombre }}</h2>        <div class="galeria-productos">            <div class="producto" *ngFor="let item of categoriaSeleccionada.items">                <img [src]="item.imagen" [alt]="item.datanombre">                <div class="info">                    <h3>{{item.nombre}}</h3>                    <p>{{item.descripcion}}</p>                    <span class="precio">${{item.precio}}</span>                    <button class="btn-dulce" (click)="agregarAlCarrito(item)">                        Agregar al carrito</button>                </div>            </div>                    </div>    </section></main><!-- FOOTER --><footer class="footer">    <p>Dessértico by JC | 2025</p>    <p>Todos los derechos reservados</p></footer></div>'
+    var COMPONENTS = [{'name': 'Admin', 'selector': 'app-admin'},{'name': 'App', 'selector': 'app-root'},{'name': 'Carrito', 'selector': 'app-carrito'},{'name': 'Categoria', 'selector': 'app-categoria'},{'name': 'Home', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'Navbar', 'selector': 'app-navbar'},{'name': 'Perfil', 'selector': 'app-perfil'},{'name': 'Recuperar', 'selector': 'app-recuperar'},{'name': 'Registro', 'selector': 'app-registro'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'Categoria'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'Categoria.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

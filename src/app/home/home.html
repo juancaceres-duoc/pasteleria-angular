@@ -1,0 +1,46 @@
+<main>    
+    <header>
+        <h1>Bienvenido a Dessértico</h1>
+        <p>Un oasis de dulzura que refrescará tu día.</p>
+    </header>
+    
+    <section class="seccion">
+        <h2>Nuestros Postres</h2>
+        <div class="tarjetas">
+            <div class="tarjeta">
+                <a [routerLink]="['/categoria', 'tortas']">
+                    <img src="categorias/tortas.jpg" alt="Tortas" />
+                    <h3>Tortas y Pasteles</h3>
+                    <p>Capas suaves, rellenos irresistibles y sabores clásicos para celebrar cualquier momento.</p>
+                </a>
+            </div>
+            <div class="tarjeta">
+                <a [routerLink]="['/categoria', 'tartas']">
+                    <img src="categorias/tartas.jpg" alt="Tartas" />
+                    <h3>Tartas y Cheesecakes</h3>
+                    <p>Deliciosas combinaciones de sabores y texturas que te harán querer más.</p>
+                </a>
+            </div>
+            <div class="tarjeta">
+                <a [routerLink]="['/categoria', 'galletas']">
+                    <img src="categorias/galletas.jpg" alt="Galletas" />
+                    <h3>Galletas y Masas</h3>
+                    <p>Perfectas para acompañar tu café o como un dulce regalo.</p>
+                </a>
+            </div>
+            <div class="tarjeta">
+                <a [routerLink]="['/categoria', 'chocolates']">
+                    <img src="categorias/chocolates.jpg" alt="Chocolates" />
+                    <h3>Chocolate y Bombones</h3>
+                    <p>Delicias artesanales de chocolate puro, bombones rellenos y sabores intensamente
+                        irresistibles.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <p>Dessértico by JC | 2025</p>
+    <p>Todos los derechos reservados</p>
+</footer>

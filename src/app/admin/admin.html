@@ -1,0 +1,36 @@
+<main>
+    <section class="seccion">
+        <h2>Panel de Control</h2>
+        <div class="tabla-usuarios-contenedor">            
+            <table class="table table-bordered table-hover tabla-usuarios">
+                <thead>
+                    <tr>
+                        <th>Usuario</th>
+                        <th>Correo</th>
+                        <th>Tipo</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let usuario of usuarios">
+                        <td>{{ usuario.usuario }}</td>
+                        <td>{{ usuario.email }}</td>
+                        <td>{{ usuario.tipo }}</td>
+                        <td>
+                            <button class="btn btn-danger btn-sm" (click)="eliminarUsuario(usuario.usuario)">
+                                Eliminar
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+    </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <p>Dessértico by JC | 2025</p>
+    <p>Todos los derechos reservados</p>
+</footer>

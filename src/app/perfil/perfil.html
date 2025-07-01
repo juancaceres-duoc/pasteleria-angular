@@ -1,0 +1,67 @@
+<main>
+  <section class="seccion">
+    <h2>Mi Perfil</h2>
+    <div class="formulario-perfil">
+      <div class="modal-content">        
+        <form [formGroup]="editarPerfilForm" (ngSubmit)="editarPerfil()" novalidate>
+
+          <!-- Usuario (solo lectura) -->
+          <div class="mb-3">
+            <label class="form-label fw-bold">Usuario</label>
+            <input formControlName="usuario" type="text" class="form-control"/>
+          </div>
+
+          <!-- Correo -->
+          <div class="mb-3">
+            <label class="form-label fw-bold">Correo</label>
+            <input formControlName="email" type="email" class="form-control" />
+            <div class="text-danger" *ngIf="editarPerfilForm.get('email')?.touched">
+              <div *ngIf="editarPerfilForm.get('email')?.hasError('required')">El correo es obligatorio.</div>
+              <div *ngIf="editarPerfilForm.get('email')?.hasError('email')">Correo inválido.</div>
+            </div>
+          </div>
+
+          <!-- Contraseña -->
+          <div class="mb-3">
+            <label class="form-label fw-bold">Contraseña</label>
+            <input formControlName="password" type="password" class="form-control" />
+            <div class="text-danger" *ngIf="editarPerfilForm.get('password')?.touched">
+              <div *ngIf="editarPerfilForm.get('password')?.hasError('required')">La contraseña es obligatoria.</div>
+              <div *ngIf="editarPerfilForm.get('password')?.hasError('minlength')">Debe tener al menos 6 caracteres.</div>
+              <div *ngIf="editarPerfilForm.get('password')?.hasError('maxlength')">No debe exceder 18 caracteres.</div>
+              <div *ngIf="editarPerfilForm.get('password')?.hasError('contraseñaDebil')">Debe contener al menos una mayúscula y un número.</div>
+            </div>
+          </div>
+
+          <!-- Dirección -->
+          <div class="mb-3">
+            <label class="form-label fw-bold">Dirección (opcional)</label>
+            <input formControlName="direccion" type="text" class="form-control" />
+          </div>
+
+          <!-- Fecha de nacimiento -->
+          <div class="mb-3">
+            <label class="form-label fw-bold">Fecha de nacimiento</label>
+            <input formControlName="fechaNacimiento" type="date" class="form-control" />
+            <div class="text-danger" *ngIf="editarPerfilForm.get('fechaNacimiento')?.touched && editarPerfilForm.get('fechaNacimiento')?.hasError('required')">
+              La fecha de nacimiento es obligatoria.
+            </div>
+          </div>
+
+          <!-- Tipo (solo lectura) -->
+          <div class="mb-3">
+            <label class="form-label fw-bold">Tipo de usuario</label>
+            <input formControlName="tipo" type="text" class="form-control campo-bloqueado"/>
+          </div>
+
+          <!-- Botón -->
+          <button type="submit" class="btn btn-dulce w-100">Guardar cambios</button>
+        </form>
+
+        <!-- Mensajes -->
+        <div *ngIf="mensaje" class="alert alert-success mt-3 text-center">{{ mensaje }}</div>
+        <div *ngIf="error" class="alert alert-danger mt-3 text-center">{{ error }}</div>
+      </div>
+    </div>
+  </section>
+</main>
