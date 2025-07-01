@@ -1,6 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+/**
+ * Componente Admin
+ * 
+ * Este componente representa el panel de control del administrador.
+ * Permite visualizar y eliminar usuarios registrados en la aplicación,
+ * accediendo a los datos almacenados en el `localStorage`.
+ * 
+ * Funcionalidades:
+ * - Carga la lista de usuarios desde localStorage al iniciar.
+ * - Permite eliminar usuarios excepto al usuario con correo 'admin@dessertico.cl'.
+ */
+
 @Component({
   selector: 'app-admin',
   standalone: true,

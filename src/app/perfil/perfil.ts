@@ -10,6 +10,18 @@ import {
 } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
+/**
+ * Componente Perfil
+ *
+ * Permite al usuario autenticado visualizar y editar su información de perfil,
+ * como email, contraseña, dirección y fecha de nacimiento.
+ *
+ * Funcionalidades:
+ * - Carga automática del usuario autenticado desde localStorage.
+ * - Muestra un formulario reactivo con validaciones.
+ * - Permite editar y guardar los cambios en el perfil.
+ * - Aplica una validación personalizada para asegurar contraseñas fuertes.
+ */
 @Component({
   selector: 'app-perfil',
   standalone: true,
@@ -19,6 +31,10 @@ import { CommonModule } from '@angular/common';
 })
 export class Perfil implements OnInit {
 
+  /**
+   * Formulario reactivo para editar el perfil del usuario.
+   * Contiene validaciones estándar y personalizadas.
+   */
   editarPerfilForm = new FormGroup({
     usuario: new FormControl({ value: '', disabled: true }, Validators.required),
     email: new FormControl('', [Validators.required, Validators.email]),
@@ -33,11 +49,22 @@ export class Perfil implements OnInit {
     tipo: new FormControl({ value: '', disabled: true }, Validators.required)
   });
 
+  /** Mensaje de éxito al guardar cambios */
   mensaje = '';
+
+  /** Mensaje de error al validar el formulario */
   error = '';
+
+  /** Lista de usuarios cargados desde el almacenamiento local */
   usuarios: any[] = [];
+
+  /** Usuario actualmente autenticado */
   usuarioOriginal = '';
 
+  /**
+   * Inicializa el componente, cargando los datos del usuario autenticado
+   * y configurando el formulario con los valores existentes.
+   */
   ngOnInit() {
     const sesionStr = localStorage.getItem('sesion');
     const sesion = sesionStr ? JSON.parse(sesionStr) : null;
@@ -60,6 +87,10 @@ export class Perfil implements OnInit {
     }
   }
 
+  /**
+   * Procesa la edición del perfil, actualizando los datos del usuario
+   * en localStorage si el formulario es válido.
+   */
   editarPerfil() {
     if (this.editarPerfilForm.invalid) {
       this.error = 'Por favor completa todos los campos correctamente.';
@@ -79,6 +110,12 @@ export class Perfil implements OnInit {
     }
   }
 
+  /**
+   * Validador personalizado para contraseñas fuertes.
+   * Requiere al menos una mayúscula y un número.
+   * 
+   * @returns ValidatorFn función de validación.
+   */
   private contraseñaFuerteValidator(): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
       const value = control.value;

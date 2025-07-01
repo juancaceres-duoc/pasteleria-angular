@@ -4,6 +4,21 @@ import { ReactiveFormsModule, FormGroup, FormControl, Validators, AbstractContro
 import { Router } from '@angular/router';
 import { ModalLoginService } from '../services/modal-login';
 
+/**
+ * Componente Registro
+ *
+ * Permite a los usuarios registrarse creando una cuenta con sus datos personales.
+ * Valida el formulario para asegurar que los campos estén completos, las contraseñas coincidan,
+ * y que el usuario tenga una edad mínima requerida.
+ *
+ * Funcionalidades:
+ * - Registro de nuevos usuarios con validación de datos.
+ * - Verificación de que el nombre de usuario no esté repetido.
+ * - Validación personalizada de contraseña fuerte.
+ * - Validación de edad mínima de 13 años.
+ * - Almacena los usuarios en localStorage con tipo 'usuario'.
+ * - Muestra mensajes de éxito o error.
+ */
 @Component({
   selector: 'app-registro',
   standalone: true,
@@ -13,6 +28,9 @@ import { ModalLoginService } from '../services/modal-login';
 })
 export class Registro {
 
+  /**
+   * Formulario reactivo para el registro de nuevos usuarios.
+   */
   registroForm = new FormGroup({
     usuario: new FormControl('', Validators.required),
     email: new FormControl('', [Validators.required, Validators.email]),
@@ -27,15 +45,25 @@ export class Registro {
     fechaNacimiento: new FormControl('', [Validators.required, this.edadMinimaValidator(13)])
   }, { validators: this.contraseñasIgualesValidator() });
 
+  /**
+   * Mensaje de error que se muestra si hay problemas en el formulario.
+   */
   error = '';
+
+  /**
+   * Mensaje de éxito que se muestra si el registro fue exitoso.
+   */
   exito = '';
 
   constructor(private router: Router, private modalService: ModalLoginService) {
     this.registroForm.valueChanges.subscribe(() => {
-  this.error = '';
-});
+      this.error = '';
+    });
   }
 
+  /**
+   * Procesa el registro del usuario. Si el formulario es válido, guarda el nuevo usuario en localStorage.
+   */
   registrar() {
     this.error = '';
     this.exito = '';
@@ -63,12 +91,19 @@ export class Registro {
     this.registroForm.reset();
   }
 
+  /**
+   * Limpia los campos del formulario y los mensajes de estado.
+   */
   limpiarFormulario() {
     this.registroForm.reset();
     this.error = '';
     this.exito = '';
   }
 
+  /**
+   * Validador que verifica que la contraseña tenga al menos una mayúscula y un número.
+   * @returns ValidationErrors si la contraseña es débil.
+   */
   private contraseñaFuerteValidator(): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
       const value = control.value;
@@ -79,6 +114,10 @@ export class Registro {
     };
   }
 
+  /**
+   * Validador que asegura que los campos 'password' y 'password2' coincidan.
+   * @returns ValidationErrors si las contraseñas no son iguales.
+   */
   private contraseñasIgualesValidator(): ValidatorFn {
     return (group: AbstractControl): ValidationErrors | null => {
       const password = group.get('password')?.value;
@@ -87,6 +126,11 @@ export class Registro {
     };
   }
 
+  /**
+   * Validador que comprueba que el usuario tenga una edad mínima.
+   * @param minEdad Edad mínima permitida.
+   * @returns ValidationErrors si el usuario es menor que la edad mínima.
+   */
   private edadMinimaValidator(minEdad: number): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
       const fechaStr = control.value;
