@@ -154,13 +154,13 @@ export class Categoria implements OnInit {
   /**
    * Carga la categoría seleccionada desde la URL y obtiene los datos del usuario autenticado.
    */
-  ngOnInit() {
-    this.usuario = this.authService.getSesion();
-    this.route.paramMap.subscribe(params => {
-      const nombreCategoria = params.get('nombre');
-      this.categoriaSeleccionada = this.datos.find(cat => cat.ruta === nombreCategoria) || null;
-    });
-  }
+ ngOnInit() {
+  this.usuario = this.authService.getSesion();
+
+  const ruta = this.route.routeConfig?.path || '';
+  const nombreCategoria = ruta.split('/')[1];
+  this.categoriaSeleccionada = this.datos.find(cat => `categoria/${cat.ruta}` === ruta) || null;
+}
 
   /**
    * Agrega un producto al carrito del usuario autenticado.
