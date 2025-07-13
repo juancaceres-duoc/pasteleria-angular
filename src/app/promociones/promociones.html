@@ -1,0 +1,41 @@
+<main>
+    <section class="seccion">
+        <h2>Promociones Disponibles</h2>
+        <h4>Sólo para consumo en local</h4>
+        <div class="galeria-productos">
+            <div class="producto" *ngFor="let promo of promociones">
+                <div class="info-con-qr">
+                    <div class="info">
+                        <h3>{{ promo.nombre }}</h3>
+                        <p>Incluye:</p>
+                        <ul>
+                            <li *ngFor="let prod of promo.productos">{{ prod }}</li>
+                        </ul>
+                        <span class="precio">${{ promo.precio }}</span>
+                        <p class="valido-hasta">Válido hasta: {{ promo.validoHasta | date:'longDate' }}</p>
+                        <div *ngIf="tipoUsuario === 'admin'" class="acciones-admin">
+                            <button class="btn-dulce btn-pequeño" (click)="editarPromo(promo)">Editar</button>
+                            <button class="btn-dulce btn-pequeño" (click)="eliminarPromo(promo)">Eliminar</button>
+                        </div>
+                    </div>
+                    <div class="qr">
+                        <img src="qr.png" alt="Código QR de la promoción" />
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="tipoUsuario === 'admin'" class="acciones-admin">
+                <button class="btn-dulce" (click)="nuevaPromo()">Agregar promoción</button>
+                <button class="btn-dulce" (click)="recargarDesdeApi()">Recargar promociones</button>
+            </div>
+        </div>
+        <app-modal-editar-promo *ngIf="promoSeleccionada" [promo]="promoSeleccionada" (cerrar)="cerrarModal()"
+            (guardar)="guardarCambiosPromo($event)">
+        </app-modal-editar-promo>
+    </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <p>Dessértico by JC | 2025</p>
+    <p>Todos los derechos reservados</p>
+</footer>

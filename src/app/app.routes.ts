@@ -6,6 +6,7 @@ import { Perfil } from './perfil/perfil';
 import { Registro } from './registro/registro';
 import { Carrito } from './carrito/carrito';
 import { Recuperar } from './recuperar/recuperar';
+import { Promociones } from './promociones/promociones';
 
 export const routes: Routes = [
     {path: '', component: Home},
@@ -14,5 +15,6 @@ export const routes: Routes = [
     {path: 'perfil', component: Perfil},
     {path: 'registro', component: Registro},
     {path: 'carrito', component: Carrito},
-    {path : 'recuperar', component: Recuperar},    
+    {path: 'recuperar', component: Recuperar},
+    {path: 'promociones', component: Promociones}
 ]

@@ -1,0 +1,78 @@
+.seccion h2 {
+  margin-bottom: 0.5rem;
+}
+
+.galeria-productos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.producto {
+  width: 100%;
+  max-width: 700px;
+  background-color: #fff;
+  border: 1px solid var(--color-border, #ccc);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 1rem;
+}
+
+.info-con-qr {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-left: 2rem;
+}
+
+.info h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #8a4b3b;
+}
+
+.info ul {
+  list-style: disc;
+  padding-left: 1.2rem;
+  margin: 0.3rem 0;
+  font-size: 0.95rem;
+  text-align: left;
+}
+
+.precio {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #8a4b3b;
+}
+
+.valido-hasta {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.qr{
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  align-self: center;
+  margin-top: 2rem;
+  margin-right: 2rem;
+}
+
+.acciones-admin {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}

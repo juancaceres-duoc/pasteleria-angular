@@ -14,6 +14,9 @@
                     <li><a [routerLink]="['/categoria', 'chocolates']">Chocolate y Bombones</a></li>
                 </ul>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/promociones">Promociones</a>
+            </li>
             <ng-container *ngIf="sesion?.logueado">
                 <li class="nav-item" *ngIf="sesion?.tipo === 'admin'">
                     <a class="nav-link" routerLink="/admin">Panel Control</a>

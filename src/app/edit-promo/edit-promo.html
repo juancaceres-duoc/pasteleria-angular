@@ -1,0 +1,37 @@
+<!-- modal-editar-promo.html -->
+<div class="modal-overlay">
+  <div class="modal-contenido">
+    <h2>Editar Promoción</h2>
+    <form [formGroup]="form" (ngSubmit)="guardarCambios()">
+      <div class="campo">
+        <label>Nombre:</label>
+        <input formControlName="nombre" type="text" />
+      </div>
+
+      <div class="campo">
+        <label>Descripción:</label>
+        <textarea formControlName="descripcion"></textarea>
+      </div>
+
+      <div class="campo">
+        <label>Precio:</label>
+        <input formControlName="precio" type="number" />
+      </div>
+
+      <div class="campo">
+        <label>Productos (uno por línea):</label>
+        <textarea formControlName="productosTexto"></textarea>
+      </div>
+
+      <div class="campo">
+        <label>Válido hasta:</label>
+        <input formControlName="validoHasta" type="date" />
+      </div>
+
+      <div class="acciones">
+        <button type="submit" class="btn-dulce">Guardar</button>
+        <button type="button" class="btn-dulce btn-pequeño" (click)="cerrar.emit()">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>
