@@ -78,7 +78,7 @@ export class LoginComponent implements OnDestroy {
       this.error = '';
       this.modalService.dismissAll();
       const sesion = this.AuthService.getSesion();
-      window.location.href = sesion?.tipo === 'admin' ? '/admin' : '/';
+      window.location.href = '/';
     } else {
       this.error = 'Usuario o contraseña incorrectos';
     }

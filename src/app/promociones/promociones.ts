@@ -3,6 +3,7 @@ import { PromocionesService } from '../services/promociones-service';
 import { AuthService } from '../services/auth-service';
 import { CommonModule } from '@angular/common';
 import { ModalEditarPromo } from '../edit-promo/edit-promo';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-promociones',
@@ -20,7 +21,8 @@ export class Promociones implements OnInit {
 
   constructor(
     private promocionesService: PromocionesService,
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) { }
 
   nuevaPromo(): void {
@@ -92,7 +94,9 @@ export class Promociones implements OnInit {
     this.promocionesService.getPromociones(true).subscribe(data => {
       this.promociones = data;
       alert('Promociones recargadas desde la API');
-      location.reload();
+      this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+        this.router.navigate(['/promociones']);
+      });
     });
   }
 }
